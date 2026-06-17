@@ -1,7 +1,9 @@
 # Reading object identity out of occipital EEG — an honest probe
 
 EDIT: My simplified understandg of this - we made a matrix out of visual cortex electrodes. Calculated 
-what is present in all concepts - and what is present on specific concepts. 
+what is present in all concepts - and what is present on specific concepts. This led to 57 % accuracy 
+(above random). Which is impressive as the subject was watching a fast flickering stream of images. 
+This is standard neuro science I guess. 
 
 *PerceptionLab. Governing rule: do not hype, do not lie, just show.*
 
