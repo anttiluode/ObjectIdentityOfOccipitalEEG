@@ -85,6 +85,22 @@ python things_eeg_order.py \
 - The scripts auto-detect whether the events' `onset` is in seconds, samples, or milliseconds (this file stores **samples**), and build epochs accordingly.
 - Run with no arguments for the built-in synthetic self-test of each decoder's core.
 
+## Where this leaves the framework
+
+These scripts come out of a larger "mathematical holography in the brain" project. After running them, here is the honest standing of that framework — stated so the repo doesn't outrun the evidence.
+
+- **What we reproduced is standard neuroscience.** Whitened nearest-template decoding is essentially regularized LDA / MVPA, and ~0.57 pairwise at 10 Hz RSVP sits on the established baseline (compare the dataset authors' own concept-decoding figure). That is the point: the result is bulletproof *because* it is boring. A pipeline that failed to reproduce the baseline would be worthless.
+- **The framework's abstract operations survive — but only because they're generic.** "Record by superposition, read by projection" is real on brain data. It is also just associative memory / MVPA. Nothing distinctive there.
+- **The distinctive physical claims did not survive.** The literal "a diffusive field is the reader" is contradicted: the working reader must *decorrelate* (whiten), which is the opposite of diffusion (which smooths/correlates). The distinctive **order/phase** claim — the one genuinely novel prediction — was not measurable on this data (and on this same dataset, frontal theta is symmetric with no theta–gamma coupling, so there is no phase structure to carry it).
+- **Whitening is a fact about the analysis, not a proven brain mechanism.** All we showed is that *our decoder* needs to decorrelate. Lateral inhibition is a plausible biological un-blurrer, but it is a hypothesis with no support from these numbers. It stays in the "bet" column.
+
+So the strong, literal brain-theory version of the framework took real damage here, and what's left standing is a re-description of known neuroscience. That forces a choice about what the project is:
+
+1. **A literal theory of the brain** — then the next step is not more code; it is a paradigm that could actually expose a phase/order code (intracranial recording, or a task designed to surface sequence coding), because masked 10 Hz scalp EEG provably cannot.
+2. **A computational architecture** — a way to *build* systems — then the in-silico results stand on their own as engineering (e.g. the field model's demonstration that temporal slots preserve an order a static sum loses), with biology cited as inspiration, not claimed as proof.
+
+The trap to avoid is the middle: keeping grand brain-theory language while only the engineering survives. This repo deliberately claims decodability and nothing more.
+
 ## Citation
 
 THINGS-EEG: Grootswagers T., Zhou I., Robinson A. K., Hebart M. N., Carlson T. A. (2022). *Human EEG recordings for 1,854 concepts presented in rapid serial visual presentation streams.* Scientific Data 9:3. Dataset: OpenNeuro ds003825. THINGS: Hebart et al., 2019.
