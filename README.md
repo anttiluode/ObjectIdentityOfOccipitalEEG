@@ -1,5 +1,8 @@
 # Reading object identity out of occipital EEG — an honest probe
 
+EDIT: My simplified understandg of this - we made a matrix out of visual cortex electrodes. Calculated 
+what is present in all concepts - and what is present on specific concepts. 
+
 *PerceptionLab. Governing rule: do not hype, do not lie, just show.*
 
 Two small scripts that ask one question on real human brain data:
